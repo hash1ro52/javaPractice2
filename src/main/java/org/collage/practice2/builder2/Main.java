@@ -2,8 +2,9 @@ package org.collage.practice2.builder2;
 
 public class Main {
     public static void main(String[] args) {
-        BankBuilder bankBuilder = new UkrainianBankBuilder();
-        Bank bank = bankBuilder.setName("NovaBank").build();
+        UkrainianBankBuilder bankBuilder = new UkrainianBankBuilder();
+        bankBuilder.setName("NovaBank");
+        Bank bank = bankBuilder.build();
 
         Client client1 = new Client("Olena Shevchenko", "olena@mail.com");
         Client client2 = new Client("Taras Petrenko", "taras@mail.com");
