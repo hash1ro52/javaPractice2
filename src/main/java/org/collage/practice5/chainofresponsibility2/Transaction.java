@@ -1,5 +1,6 @@
 package org.collage.practice5.chainofresponsibility2;
 
+
 public class Transaction {
     private String description;
     private double amount;
@@ -9,8 +10,12 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public void execute(Account account) {
-        System.out.println("Executing transaction: " + description + " Amount: $" + amount);
-        // Example logic: deduct amount from account
+    public double getAmount() {
+        return amount;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
+

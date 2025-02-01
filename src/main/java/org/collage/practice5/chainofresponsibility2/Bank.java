@@ -1,24 +1,17 @@
 package org.collage.practice5.chainofresponsibility2;
 
-public class Bank extends AccountComponent {
+public class Bank extends AccountHandler {
     private String bankName;
     private String address;
 
-    public Bank(String name, String bankName, String address) {
-        this.name = name;
+    public Bank(String bankName, String address) {
         this.bankName = bankName;
         this.address = address;
     }
 
     @Override
-    public void processTransaction() {
-        System.out.println("Processing transactions for Bank: " + bankName);
-        processSubAccounts();
-    }
-
-    private void processSubAccounts() {
-        for (AccountComponent account : subAccounts) {
-            account.processTransaction();
-        }
+    public void handleTransaction(Transaction transaction) {
+        System.out.println("Bank " + bankName + " processing transaction...");
+        super.handleTransaction(transaction); // Передаємо запит далі
     }
 }

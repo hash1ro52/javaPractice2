@@ -1,5 +1,6 @@
 package org.collage.practice5.chainofresponsibility;
 
+
 public class Window extends WindowComponent {
     private String title;
     private int width;
@@ -14,16 +15,7 @@ public class Window extends WindowComponent {
 
     @Override
     public void draw() {
-        // Set graphics buffer
-        // Set window position
-        // Reset counters
         System.out.println("Drawing Window: " + title + " (" + width + "x" + height + ")");
-        superDraw();
-    }
-
-    private void superDraw() {
-        for (WindowComponent component : nestedComponents) {
-            component.draw();
-        }
+        super.draw(); // Виклик базової реалізації для малювання вкладених компонентів
     }
 }
